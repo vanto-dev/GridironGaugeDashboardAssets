@@ -2,7 +2,7 @@ import React from "react"
 import {CardActionArea, CardContent, CardMedia, Typography, Card} from "@mui/material"
 
 
-interface PlayerEntryProps {
+export interface PlayerEntryProps {
   playerName: string,
   playerPhoto: string,
   playerScore: string,

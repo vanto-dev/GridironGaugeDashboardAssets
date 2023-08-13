@@ -3,6 +3,7 @@ import {Tab, Tabs, Box } from "@mui/material"
 import TabContext from "@mui/lab/TabContext"
 import TabPanel from "@mui/lab/TabPanel"
 import PlayerGrid from "./PlayerGrid"
+import {test_RBData} from "./test_RBData"
 
 export default function TabsList() {
   const [value, setValue] = React.useState("1")
@@ -31,11 +32,9 @@ export default function TabsList() {
       <TabPanel value="1">Item One</TabPanel>
       <TabPanel value="2">
         <Box sx={{
-          width: "100%", typography: "body1",  display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          width: "100%", typography: "body1"
         }}>
-          <PlayerGrid />
+          <PlayerGrid  playerData={test_RBData}/>
         </Box>
       </TabPanel>
       <TabPanel value="3">Item Three</TabPanel>
