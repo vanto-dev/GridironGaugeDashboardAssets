@@ -2,26 +2,34 @@ import React from "react"
 import {CardActionArea, CardContent, CardMedia, Typography, Card} from "@mui/material"
 
 
+interface PlayerEntryProps {
+  playerName: string,
+  playerPhoto: string,
+  playerScore: string,
+}
 
-export default function PlayerEntry() {
+const PlayerEntry: React.FC<PlayerEntryProps> = ({playerName, playerPhoto, playerScore}) => {
+
   return (
-    <Card>
+    <Card sx={{ backgroundColor: "#9d9d9e" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4430807.png&w=350&h=254" // should be updated with link/file_name sent from backend
-          alt="Bijan Robinson"
+          image={playerPhoto} // should be updated with link/file_name sent from backend
+          alt={playerName}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Bijan Robinson is the best
+            {playerName}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            He's Him
+          <Typography variant="body1" color="text.secondary">
+            Overall Score: {playerScore}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
   )
 }
+
+export default PlayerEntry
