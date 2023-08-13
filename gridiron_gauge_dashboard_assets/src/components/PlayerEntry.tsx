@@ -1,30 +1,32 @@
 import React from "react"
-import {CardActionArea, CardContent, CardMedia, Typography, Card} from "@mui/material"
-
+import { CardActionArea, CardContent, CardMedia, Typography, Card } from "@mui/material"
 
 export interface PlayerEntryProps {
-  playerName: string,
-  playerPhoto: string,
-  playerScore: string,
+  playerName: string;
+  playerPhoto: string;
+  playerScore: string;
 }
 
-const PlayerEntry: React.FC<PlayerEntryProps> = ({playerName, playerPhoto, playerScore}) => {
+const PlayerEntry: React.FC<PlayerEntryProps> = ({ playerName, playerPhoto, playerScore }) => {
+  const playerNameStyle = {
+    fontSize: playerName.length > 15 ? "1.25rem" : "1.5rem", // Adjust the threshold and font sizes as needed
+  }
 
   return (
     <Card sx={{ backgroundColor: "#9d9d9e" }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image={playerPhoto} // should be updated with link/file_name sent from backend
+          height="200"
+          image={playerPhoto}
           alt={playerName}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h4" component="div" style={playerNameStyle}>
             {playerName}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Overall Score: {playerScore}
+              Overall Score: {playerScore}
           </Typography>
         </CardContent>
       </CardActionArea>

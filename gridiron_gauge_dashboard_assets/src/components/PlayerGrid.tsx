@@ -1,23 +1,28 @@
 import * as React from "react"
 import Box from "@mui/material/Box"
-import Grid from "@mui/material/Unstable_Grid2"
-import PlayerEntry, {PlayerEntryProps} from "./PlayerEntry"
+import Grid from "@mui/material/Unstable_Grid2" // Importing from the unstable module
+import PlayerEntry from "./PlayerEntry"
+
+interface PlayerData {
+    name: string;
+    playerPhoto: string;
+    score: string;
+}
 
 interface PlayerGridProps {
-  playerData: PlayerEntryProps[];
+    playerData: PlayerData[];
 }
 
 const PlayerGrid: React.FC<PlayerGridProps> = ({ playerData }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={1.5} columns={32}>
+    <Box>
+      <Grid container spacing={2}>
         {playerData.map((player, index) => (
-          <Grid key={index} xs={12} sm={6} md={3} lg={4}>
-            {/* Adjust the md column to distribute 4 cards on each row */}
+          <Grid key={index} xs={6} sm={4} md={3} lg={2}>
             <PlayerEntry
-              playerName={player.playerName}
+              playerName={player.name}
               playerPhoto={player.playerPhoto}
-              playerScore={player.playerScore}
+              playerScore={player.score}
             />
           </Grid>
         ))}
