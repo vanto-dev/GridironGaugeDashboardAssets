@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import PlayerEntry from "./components/PlayerEntry";
+import React from "react"
+import "./App.css"
 import footballImage from "./football.png"
+import TabsList from "./components/TabsList"
 
 function App() {
   return (
@@ -11,10 +11,10 @@ function App() {
         <p>
           Hi, Welcome to Gridiron Gauge.
         </p>
-          <PlayerEntry></PlayerEntry>
+        <TabsList />
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
