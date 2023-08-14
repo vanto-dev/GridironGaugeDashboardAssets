@@ -10,6 +10,8 @@ function App() {
         <img src={footballImage} className="App-logo" alt="logo" />
         <p>
           Hi, Welcome to Gridiron Gauge.
+          <p className = "description"> The goal of this page is to help identify players who might have value. <br />
+              I use last season's stats, combined with age trends to assign scores</p>
         </p>
         <TabsList />
       </header>
